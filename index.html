@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>極致浮誇傳送門</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Noto+Sans+TC:wght@900&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle, #ff00ff, #00ffff, #ffff00, #ff0000);
+            background-size: 400% 400%;
+            animation: gradientBG 5s ease infinite;
+            font-family: 'Noto Sans TC', sans-serif;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 50px;
+            border: 10px solid #fff;
+            box-shadow: 0 0 50px #fff, inset 0 0 50px #fff;
+            transform: rotate(-2deg);
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 5px 5px #ff00ff, -5px -5px #00ffff, 10px 10px #000;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            animation: shake 0.5s infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(0,0); }
+            25% { transform: translate(5px, 5px); }
+            50% { transform: translate(-5px, -5px); }
+            75% { transform: translate(5px, -5px); }
+            100% { transform: translate(0,0); }
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .glam-button {
+            position: relative;
+            padding: 25px 60px;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            display: inline-block;
+            box-shadow: 0 10px 0 #000;
+        }
+
+        .btn-2048 { background: #ff4500; border: 5px solid #fff; }
+        .btn-ubike { background: #32cd32; border: 5px solid #fff; }
+        .btn-editor { background: #1e90ff; border: 5px solid #fff; }
+
+        .glam-button:hover {
+            transform: scale(1.2) rotate(5deg);
+            box-shadow: 0 0 80px rgba(255, 255, 255, 1);
+            filter: hue-rotate(90deg);
+        }
+
+        .glam-button:active {
+            transform: translateY(10px);
+            box-shadow: 0 0 0 #000;
+        }
+
+        .glam-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 浮誇背景裝飾 */
+        .decoration {
+            position: absolute;
+            font-size: 5rem;
+            opacity: 0.5;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-50px) rotate(180deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="decoration" style="top:10%; left:10%;">🌟</div>
+    <div class="decoration" style="bottom:10%; right:10%;">🔥</div>
+    <div class="decoration" style="top:20%; right:20%;">💎</div>
+    <div class="decoration" style="bottom:20%; left:20%;">🌈</div>
+
+    <div class="container">
+        <h1>專案傳送門</h1>
+        <div class="button-group">
+            <a href="2048game.html" class="glam-button btn-2048">
+                <span>🎮 啟動 2048 遊戲</span>
+            </a>
+            <a href="ubikeapp.html" class="glam-button btn-ubike">
+                <span>🚲 YouBike 查詢器</span>
+            </a>
+            <a href="index.html" class="glam-button btn-editor">
+                <span>🎨 影像編輯工具</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // 增加一點點點擊特效
+        document.querySelectorAll('.glam-button').forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                const colors = ['#ff00ff', '#00ffff', '#ffff00', '#ff0000', '#00ff00'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                document.body.style.background = `radial-gradient(circle, ${randomColor}, #000)`;
+            });
+            
+            button.addEventListener('mouseleave', () => {
+                document.body.style.background = 'radial-gradient(circle, #ff00ff, #00ffff, #ffff00, #ff0000)';
+            });
+        });
+    </script>
+</body>
+</html>
+glamorous_portal.html
+目前顯示的是「glamorous_portal.html」。
